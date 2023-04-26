@@ -1,14 +1,16 @@
-# Edje WooCommerce Library
+# Pixel WooCommerce Library
 
-![Edje Wordpress](https://raw.github.com/hrsetyono/cdn/master/edje-wp-library/logo.jpg)
+![Pixel WooCommerce Library Logo](https://raw.github.com/hrsetyono/cdn/master/edje-wp-library/logo.jpg)
 
-This is a library plugin for our starter theme: [Edje](https://github.com/hrsetyono/edje-wp-theme). We don't recommend using this with your theme.
+This is a WooCommerce helper plugin to be used alongside: [Pixel Theme](https://github.com/pixelstudio-id/pixel-wp-theme) and [Pixel Library](https://github.com/pixelstudio-id/pixel-wp-library). We don't recommend using this with other setup.
 
 Last tested working on:
 
-- WordPress 5.8
-- WooCommerce 6.3.1
-- PHP 7.3.5
+- WordPress 6.2
+- WooCommerce 7.6.0
+- PHP 7.3.x
+
+> This plugin is originally named [Edje WC Library](https://github.com/hrsetyono/edje-wc-library), we are forking it to match the versioning with WooCommerce's version.
 
 ## [DEMO](https://test.pixelstudio.id/shop)
 
@@ -22,7 +24,7 @@ The original variation interface is really lacking. We did a slight rearrangemen
 
 ## 2. Widgets
 
-Our Edje Theme uses widget for Header and Footer (we like it the old way), so this plugin adds two widgets:
+Our Pixel Theme uses widget for Header and Footer (we like it the old way), so this plugin adds two widgets:
 
 - **Cart** - The revamped Cart widget with better markup for styling.
 - **MyAccount** - Button to login when signed-out and to MyAccount when signed-in.
@@ -54,15 +56,15 @@ These are the list of modifications by this plugin:
 apply_filters('h_myaccount_button_args', $args)
 ```
 
-`$args` (array)
+- `$args` (array)
 
-- `label` (string) - Label when logged out.  
-    Default: what's provided in the setting.
+    - `label` (string) - Label when logged out.  
+        Default: what's provided in the setting.
 
-- `label_logged_in` (string) - Label when logged in.  
-    Default: what's provided in the setting.
+    - `label_logged_in` (string) - Label when logged in.  
+        Default: what's provided in the setting.
 
-- `icon` (string) - raw SVG markup of the icon.
+    - `icon` (string) - raw SVG markup of the icon.
 
 ### [Widget] Cart
 
@@ -70,12 +72,12 @@ apply_filters('h_myaccount_button_args', $args)
 apply_filters('h_cart_button_args', $args)
 ```
 
-`$args` (array)
+- `$args` (array)
 
-- `label` (string) - the button label.
-    Default: `<span>Cart</span>`
+    - `label` (string) - the button label.
+        Default: `<span>Cart</span>`
 
-- `icon` (string) - raw SVG markup of the icon.
+    - `icon` (string) - raw SVG markup of the icon.
 
 ### [Widget] Disabled Widgets
 
@@ -83,20 +85,20 @@ apply_filters('h_cart_button_args', $args)
 apply_filters('h_disabled_woocommerce_widgets', $list)
 ```
 
-`$list` (array) - List of widget to be disabled.
+- `$list` (array) - List of widget to be disabled.  
 
-Default:
+    Default:
 
-```php
-[
-  'WC_Widget_Product_Tag_Cloud',
-  'WC_Widget_Product_Categories'
-  'WC_Widget_Top_Rated_Products',
-  'WC_Widget_Recent_Reviews',
-  'WC_Widget_Rating_Filter',
-  'WC_Widget_Recently_Viewed',
-]
-```
+    ```php
+    [
+      'WC_Widget_Product_Tag_Cloud',
+      'WC_Widget_Product_Categories'
+      'WC_Widget_Top_Rated_Products',
+      'WC_Widget_Recent_Reviews',
+      'WC_Widget_Rating_Filter',
+      'WC_Widget_Recently_Viewed',
+    ]
+    ```
 
 ### [Cart Page] Footnote below Checkout Button
 
@@ -104,7 +106,7 @@ Default:
 apply_filters('h_cart_total_footnote', $text);
 ```
 
-`$text` (string) - Default: "Shipping cost, taxes, and payment method will be shown at checkout."
+- `$text` (string) - Default: "Shipping cost, taxes, and payment method will be shown at checkout."
 
 ### [Product] On Sale Label
 
@@ -112,5 +114,5 @@ apply_filters('h_cart_total_footnote', $text);
 apply_filters('h_product_onsale_label', $text, $percentage);
 ```
 
-`$text` (string) - The label that replaced "On Sale".  
-Default: "xx% Off"
+- `$text` (string) - The label that replaced "On Sale".  
+    Default: `%s%% Off`

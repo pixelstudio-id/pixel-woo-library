@@ -1,9 +1,9 @@
 {
-  "name": "edje-wc-library",
+  "name": "pixel-woo-library",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hrsetyono/edje-wc-library.git"
+    "url": "git+https://github.com/pixelstudio-id/pixel-woo-library.git"
   },
   "dependencies": {},
   "devDependencies": {

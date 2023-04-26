@@ -1,9 +1,9 @@
 {
-  "name": "pixelstudio/edje-wc-library",
+  "name": "pixelstudio/pixel-woo-library",
   "description": "Plugin to simplify WooCommerce complicated features.",
-  "keywords": ["wordpress", "plugin", "library"],
+  "keywords": ["wordpress", "woocommerce", "plugin", "library"],
   "type": "wordpress-plugin",
-  "homepage": "https://github.com/hrsetyono/edje-wp-library/",
+  "homepage": "https://github.com/pixelstudio-id/pixel-woo-library/",
   "authors": [
     {
       "name": "Pixel Studio",
