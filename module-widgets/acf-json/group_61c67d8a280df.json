@@ -1,49 +1,79 @@
 {
-  "key": "group_61c67d8a280df",
-  "title": "Edje Widget - Cart",
-  "fields": [
-      {
-          "key": "field_61c67e72cb76f",
-          "label": "Cart Style",
-          "name": "cart_style",
-          "type": "button_group",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-              "width": "",
-              "class": "",
-              "id": ""
-          },
-          "choices": {
-              "default": "Default",
-              "offcanvas": "Offcanvas"
-          },
-          "allow_null": 0,
-          "other_choice": 0,
-          "default_value": "",
-          "layout": "horizontal",
-          "return_format": "value",
-          "save_other_choice": 0
-      }
-  ],
-  "location": [
-      [
-          {
-              "param": "widget",
-              "operator": "==",
-              "value": "hwc_cart"
-          }
-      ]
-  ],
-  "menu_order": 0,
-  "position": "normal",
-  "style": "default",
-  "label_placement": "top",
-  "instruction_placement": "label",
-  "hide_on_screen": "",
-  "active": true,
-  "description": "",
-  "show_in_rest": 0,
-  "modified": 1640399465
+    "key": "group_61c67d8a280df",
+    "title": "Edje Widget - Cart",
+    "fields": [
+        {
+            "key": "field_61c67e72cb76f",
+            "label": "Cart Style",
+            "name": "cart_style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "offcanvas": "Offcanvas"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6448c3e7dd1e2",
+            "label": "Action Buttons",
+            "name": "action_buttons",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "both": "Cart and Checkout",
+                "checkout-only": "Checkout only",
+                "cart-only": "Cart only"
+            },
+            "default_value": [
+                "both"
+            ],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "widget",
+                "operator": "==",
+                "value": "hwc_cart"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1682491220
 }

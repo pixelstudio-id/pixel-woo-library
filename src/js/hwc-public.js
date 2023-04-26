@@ -37,19 +37,24 @@ const hQuantity = {
 const hMiniCart = {
   init() {
     const $minicarts = document.querySelectorAll('.h-cart');
-
     [...$minicarts].forEach(($cart) => {
       $cart.addEventListener('click', this.openPopup);
     });
 
     document.addEventListener('click', this.closePopup);
+    this.closeOffcanvasCart();
+    this.openCartOnAdded();
   },
 
   openPopup(e) {
     if (!e.target.classList.contains('is-cart-button') && !e.target.closest('.is-cart-button')) { return; }
 
-    e.preventDefault();
-    e.target.closest('.h-cart').classList.toggle('is-active');
+    const isCheckout = document.querySelector('body').classList.contains('woocommerce-checkout');
+    
+    if (!isCheckout) {
+      e.preventDefault();
+      e.target.closest('.h-cart').classList.toggle('is-active');
+    }
   },
 
   closePopup(e) {
@@ -60,6 +65,36 @@ const hMiniCart = {
     if ($openMinicart) {
       $openMinicart.classList.remove('is-active');
     }
+  },
+
+  /**
+   * Close the offcanvas Cart when clicking the Title
+   */
+  closeOffcanvasCart() {
+    const $titles = document.querySelectorAll('.h-cart.is-style-offcanvas .widgettitle');
+
+    [...$titles].forEach(($t) => {
+      $t.addEventListener('click', (e) => {
+        e.currentTarget.closest('.h-cart').classList.remove('is-active');
+      });
+    });
+  },
+
+  /**
+   * Open the Cart Offcanvas when product is added to cart via AJAX
+   */
+  openCartOnAdded() {
+    // have to use jQuery for WC compatibility
+    window.jQuery('body').on('added_to_cart', (e) => {
+      const isDesktop = window.innerWidth > 768;
+      const $cart = isDesktop
+        ? document.querySelector('.header .h-cart')
+        : document.querySelector('.header-mobile .h-cart');
+
+      if ($cart) {
+        $cart.classList.add('is-active');
+      }
+    });
   },
 };
 
