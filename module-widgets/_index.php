@@ -10,12 +10,14 @@ add_filter('acf/settings/load_json', '_hwc_load_acf_json_widgets', 20);
  */
 function _hwc_unregister_widgets() {
   $disabled_widgets = apply_filters('hwc_disabled_widgets', [
-    // 'WC_Widget_Products',
+    'WC_Widget_Products',
     'WC_Widget_Product_Tag_Cloud',
-    // 'WC_Widget_Layered_Nav_Filters',
-    // 'WC_Widget_Layered_Nav',
+    'WC_Widget_Layered_Nav_Filters',
+    'WC_Widget_Layered_Nav',
+    'WC_Widget_Price_Filter',
     // 'WC_Widget_Cart',
     'WC_Widget_Product_Categories',
+    'WC_Widget_Product_Search',
     'WC_Widget_Top_Rated_Products',
     'WC_Widget_Recent_Reviews',
     'WC_Widget_Rating_Filter',
