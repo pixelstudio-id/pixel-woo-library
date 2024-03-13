@@ -8,12 +8,12 @@
  * License: MIT
  * Author: Pixel Studio
  * Author URI: https://pixelstudio.id/
- * Version: 7.6.2
+ * Version: 8.5.0
 */
 
 if (!defined('WPINC')) { die; } // exit if accessed directly
 
-define('HWC_VERSION', '7.6.2');
+define('HWC_VERSION', '8.5.0');
 define('HWC_DIR', plugins_url('', __FILE__));
 define('HWC_DIST', plugin_dir_url(__FILE__) . 'dist');
 define('HWC_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
@@ -31,7 +31,7 @@ add_action('wp_enqueue_scripts', '_h_enqueue_woocommerce_scripts', 99999);
  * @action plugins_loaded
  */
 function _h_after_woocommerce_plugin_loaded() {
-  if(!class_exists('WooCommerce')) { return; }
+  if (!class_exists('WooCommerce')) { return; }
 
   require_once __DIR__ . '/module-gutenberg/_index.php';
   require_once __DIR__ . '/module-variations-ui/_index.php';
@@ -45,7 +45,7 @@ function _h_after_woocommerce_plugin_loaded() {
  * @action template_redirect
  */
 function _h_after_woocommerce_template_loaded() {
-  if(!class_exists('WooCommerce')) { return; }
+  if (!class_exists('WooCommerce')) { return; }
 
   require_once __DIR__ . '/frontend/cart.php';
   require_once __DIR__ . '/frontend/my-account.php';
